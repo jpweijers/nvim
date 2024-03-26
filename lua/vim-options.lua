@@ -7,6 +7,12 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.g.background = "light"
 
+-- disable arrow keys
+vim.keymap.set("n", "<left>", '<cmd>echo "use hjkl to move!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "use hjkl to move!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "use hjkl to move!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "use hjkl to move!!"<CR>')
+
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")

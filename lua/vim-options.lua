@@ -6,6 +6,7 @@ vim.cmd("set shiftwidth=2")
 
 vim.g.mapleader = " "
 vim.g.background = "light"
+vim.opt.termguicolors = true
 
 -- disable arrow keys
 vim.keymap.set("n", "<left>", '<cmd>echo "use hjkl to move!!"<CR>')

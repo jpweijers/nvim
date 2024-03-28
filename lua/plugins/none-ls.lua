@@ -10,6 +10,9 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
         require("none-ls.code_actions.eslint"),
+        null_ls.builtins.diagnostics.golangci_lint,
+        null_ls.builtins.formatting.gofmt,
+        null_ls.builtins.formatting.goimports,
 			},
 		})
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})

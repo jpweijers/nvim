@@ -10,13 +10,22 @@ return {
 		vim.keymap.set("n", "<leader>e", ":Neotree reveal left <CR>", {})
 		vim.keymap.set("n", "<C-b>", ":Neotree toggle <CR>", {})
 		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
-    local neo_tree = require("neo-tree")
-    neo_tree.setup({
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-        }
-      }
-    })
-	end
+		local neo_tree = require("neo-tree")
+		neo_tree.setup({
+			filesystem = {
+				filtered_items = {
+					hide_dotfiles = false,
+					visible = true,
+				},
+				find_args = {
+					fd = {
+						"--exclude",
+						".git",
+						"--exclude",
+						"node_modules",
+					},
+				},
+			},
+		})
+	end,
 }

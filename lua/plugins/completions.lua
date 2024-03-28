@@ -64,8 +64,9 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" }, -- For luasnip users.
-          { name = "copilot" },
+          -- { name = "copilot" },
           { name = "buffer" },
+          { name = "path" },
         }),
         formatting = {
           fields = { "kind", "abbr", "menu" },
@@ -78,7 +79,7 @@ return {
               luasnip = "[Snippet]",
               buffer = "[Buffer]",
               path = "[Path]",
-              copilot = "[Copilot]",
+              -- copilot = "[Copilot]",
             })[entry.source.name]
             return vim_item
           end,

@@ -1,4 +1,4 @@
-require "nvchad.mappings"
+require("nvchad.mappings")
 
 -- add yours here
 
@@ -21,3 +21,9 @@ map("n", "<leader>nt", require("package-info").toggle, { desc = "Toggle Package 
 map("n", "<leader>ni", require("package-info").install, { desc = "Install Package" })
 map("n", "<leader>nu", require("package-info").update, { desc = "Update Package" })
 map("n", "<leader>np", require("package-info").change_version, { desc = "Change Package Version" })
+
+map("n", "c", '"_c', { desc = "Delete and enter insert mode" })
+map("n", "cc", '"_cc', { desc = "Delete and enter insert mode" })
+map("n", "d", '"_d', { desc = "Delete" })
+map("n", "dd", '"_dd', { desc = "Delete" })
+map("n", "<leader>vs", ":vsplit<CR>", { desc = "Split window" })

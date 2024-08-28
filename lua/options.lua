@@ -12,5 +12,6 @@ opt.relativenumber = true
 
 opt.scrolloff = 8
 
+-- vim.lsp.buf.inlay_hint.enable()
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!

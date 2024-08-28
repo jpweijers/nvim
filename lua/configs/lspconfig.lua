@@ -18,19 +18,3 @@ require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
 })
-
--- local default_setup = function(server)
--- 	require("lspconfig")[server].setup({
--- 		on_attach = on_attach,
--- 		on_init = on_init,
--- 		capabilities = capabilities,
--- 	})
--- end
---
--- require("mason").setup({})
--- require("mason-lspconfig").setup({
--- 	ensure_installed = {},
--- 	handlers = {
--- 		default_setup,
--- 	},
--- })

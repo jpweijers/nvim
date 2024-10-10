@@ -6,6 +6,7 @@ local options = {
 		go = { "gofumpt", "goimports", "golangci-lint" },
 		typescript = { { "prettierd", "eslint_d" } },
 		typescriptreact = { { "prettierd", "eslint_d" } },
+		python = { "isort", "black" },
 	},
 
 	format_on_save = {

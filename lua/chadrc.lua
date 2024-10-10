@@ -6,6 +6,9 @@ local M = {}
 
 M.ui = {
 	theme = "one_light",
+	tabufline = {
+		order = { "treeOffset", "buffers", "tabs", "btns" },
+	},
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },

@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
-local servers = { "html", "cssls", "tsserver", "ts_ls", "gopls", "lua_ls", "prismals", "pylsp" }
+local servers = { "html", "cssls", "ts_ls", "denols", "gopls", "lua_ls", "prismals", "pylsp" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
@@ -13,6 +13,17 @@ for _, lsp in ipairs(servers) do
 		capabilities = capabilities,
 	})
 end
+
+lspconfig.denols.setup({
+	on_attach = on_attach,
+	root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+})
+
+lspconfig.ts_ls.setup({
+	on_attach = on_attach,
+	root_dir = lspconfig.util.root_pattern("package.json"),
+	single_file_support = false,
+})
 
 require("mason").setup({})
 require("mason-lspconfig").setup({

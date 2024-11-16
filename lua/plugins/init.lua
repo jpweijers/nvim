@@ -39,7 +39,7 @@ return {
 		"nvim-tree/nvim-tree.lua",
 		opts = function()
 			local conf = require("nvchad.configs.nvimtree")
-			conf.git.ignore = false
+			-- conf.git.ignore = false
 			return conf
 		end,
 	},

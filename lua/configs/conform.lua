@@ -4,8 +4,8 @@ local options = {
 		-- css = { "prettier" },
 		-- html = { "prettier" },
 		go = { "gofumpt", "goimports", "golangci-lint" },
-		typescript = { { "prettierd", "eslint_d" } },
-		typescriptreact = { { "prettierd", "eslint_d" } },
+		typescript = { { "prettierd" } },
+		typescriptreact = { { "prettierd" } },
 		python = { "isort", "black" },
 	},
 

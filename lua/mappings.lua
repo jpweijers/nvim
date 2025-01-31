@@ -33,3 +33,6 @@ map("n", "d", '"_d', { desc = "Delete" })
 map("n", "dd", '"_dd', { desc = "Delete" })
 
 map("n", "<leader>vs", ":vsplit<CR>", { desc = "Split window" })
+
+map("n", "<leader>gb", require("gitsigns").blame_line, { desc = "Git blame line" })
+map("n", "<leader>gB", require("gitsigns").blame, { desc = "Git blame" })

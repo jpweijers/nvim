@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
+    version = "8.4.0",
     dependencies = { "neovim/nvim-lspconfig", "williamboman/mason.nvim" },
     lazy = false,
     event = "BufWritePre", -- uncomment for format on save
@@ -10,6 +11,7 @@ return {
   },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
+  { "WhoIsSethDaniel/mason-tool-installer.nvim" },
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -50,5 +52,5 @@ return {
     config = function()
       require("render-markdown").setup({})
     end,
-  }
+  },
 }

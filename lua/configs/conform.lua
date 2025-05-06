@@ -5,7 +5,7 @@ local options = {
     -- html = { "prettier" },
     -- go = { "gofumpt", "goimports", "golangci-lint" },
     vue = { "prettier" },
-    typescript = { { "prettierd" } },
+    typescript = { { "prettier" } },
     typescriptreact = { { "prettierd" } },
     python = { "isort", "black" },
   },

@@ -15,3 +15,5 @@ opt.scrolloff = 8
 -- vim.lsp.buf.inlay_hint.enable()
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
+
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/code/mais/.vscode/mais.code-snippets" } })

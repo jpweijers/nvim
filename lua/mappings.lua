@@ -5,7 +5,6 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
 
 map("n", "<leader>re1", "<cmd>NvimTreeResize 30<CR>", { desc = "Resize NvimTree" })
 map("n", "<leader>re2", "<cmd>NvimTreeResize 50<CR>", { desc = "Resize NvimTree" })
@@ -13,10 +12,11 @@ map("n", "<leader>re3", "<cmd>NvimTreeResize 100<CR>", { desc = "Resize NvimTree
 
 map("n", "<leader>pf", "<cmd>echo expand('%:p')<CR>", { desc = "Print full path" })
 
-map("n", "<leader>bd", function()
-	require("nvchad.tabufline").closeBufs_at_direction("right")
-	require("nvchad.tabufline").closeBufs_at_direction("left")
-end, { desc = "Close all buffers" })
+-- map("n", "<leader>bd", function()
+--   require("nvchad.tabufline").closeBufs_at_direction("right")
+--   require("nvchad.tabufline").closeBufs_at_direction("left")
+-- end, { desc = "Close all buffers" })
+map("n", "<leader>bd", ":%bd|e#<CR>", { desc = "Close all buffers" })
 
 -- package info
 map("n", "<leader>ns", require("package-info").show, { desc = "Show Package Info" })
@@ -36,3 +36,7 @@ map("n", "<leader>vs", ":vsplit<CR>", { desc = "Split window" })
 
 map("n", "<leader>gb", require("gitsigns").blame_line, { desc = "Git blame line" })
 map("n", "<leader>gB", require("gitsigns").blame, { desc = "Git blame" })
+
+map("n", "<leader>fm", function() require("conform").format() end, { desc = "Format" })
+
+map("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename" })

@@ -5,6 +5,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
 local servers = { "html", "cssls", "ts_ls", "eslint", "denols", "lua_ls", "prismals", "pylsp", "volar" }
+local formatters = { "prettier" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
@@ -27,21 +28,26 @@ lspconfig.ts_ls.setup({
     plugins = {
       {
         name = "@vue/typescript-plugin",
-        location = "/Users/jpweijers/.nvm/versions/node/v23.7.0/lib/node_modules/@vue/typescript-plugin",
-        languages = { "javascript", "typescript", "vue" },
+        location = "/Users/jpweijers/.nvm/versions/node/v20.13.1/lib/node_modules/@vue/typescript-plugin",
+        languages = { "vue" },
       },
     },
   },
   filetypes = {
-    "javascript",
-    "typescript",
     "vue",
   },
 })
 
 lspconfig.volar.setup({})
 
-require("mason").setup({})
+require("mason").setup({
+  ensure_installed = servers
+})
+
 require("mason-lspconfig").setup({
-  ensure_installed = servers,
+  ensure_installed = servers
+})
+
+require("mason-tool-installer").setup({
+  ensure_installed = formatters
 })

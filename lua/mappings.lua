@@ -37,6 +37,30 @@ map("n", "<leader>vs", ":vsplit<CR>", { desc = "Split window" })
 map("n", "<leader>gb", require("gitsigns").blame_line, { desc = "Git blame line" })
 map("n", "<leader>gB", require("gitsigns").blame, { desc = "Git blame" })
 
-map("n", "<leader>fm", function() require("conform").format() end, { desc = "Format" })
+map("n", "<leader>fm", function()
+	require("conform").format()
+end, { desc = "Format" })
 
 map("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename" })
+
+map("n", "<leader>gr", function()
+	require("telescope.builtin").lsp_references()
+end, { desc = "Lsp [G]o to [R]eference" })
+map("n", "<leader>ca", function()
+	vim.lsp.buf.code_action()
+end, { desc = "Lsp [C]ode [A]ction" })
+
+-- Diagnostics
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Lsp next disgnostic" })
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Lsp previous diagnostic" })
+map("n", "<leader>ds", function()
+	require("telescope.builtin").diagnostics()
+end, { desc = "Lsp [D]iagnostic [S]how" })
+
+-- Completion
+map("i", "<M- >", require("cmp").complete, { desc = "Completion" })
+
+-- telescope
+map("n", "<leader>fr", function()
+	require("telescope.builtin").resume()
+end, { desc = "Resume search" })

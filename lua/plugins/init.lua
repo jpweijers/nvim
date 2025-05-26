@@ -51,4 +51,11 @@ return {
 			require("render-markdown").setup({})
 		end,
 	},
+	{
+		"echasnovski/mini.nvim",
+		version = "*",
+		config = function()
+			require("mini").setup()
+		end,
+	},
 }

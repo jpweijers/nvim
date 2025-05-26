@@ -39,12 +39,15 @@ lspconfig.ts_ls.setup({
 		plugins = {
 			{
 				name = "@vue/typescript-plugin",
-				location = "/Users/jpweijers/.nvm/versions/node/v20.13.1/lib/node_modules/@vue/typescript-plugin",
+				location = vim.fn.stdpath("data")
+					.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
 				languages = { "vue" },
 			},
 		},
 	},
 	filetypes = {
+		"typescript",
+		"javascript",
 		"vue",
 	},
 })

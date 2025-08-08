@@ -3,6 +3,7 @@ require("nvchad.mappings")
 -- add yours here
 
 local map = vim.keymap.set
+local unmap = vim.keymap.del
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
@@ -32,6 +33,7 @@ map("n", "ci", '"_ci', { desc = "Delete and enter insert mode" })
 map("n", "d", '"_d', { desc = "Delete" })
 map("n", "dd", '"_dd', { desc = "Delete" })
 
+unmap("n", "<leader>v") -- NvChad mapping for opening vertical terminal
 map("n", "<leader>vs", ":vsplit<CR>", { desc = "Split window" })
 
 map("n", "<leader>gb", require("gitsigns").blame_line, { desc = "Git blame line" })
